@@ -39,7 +39,7 @@ def verify(key: str, hwid: str):
         return {"valid": False, "reason": "Key đang dùng trên máy khác"}
     return {"valid": True, "expires": expires}
 
-@app.post("/admin/create")
+@app.get("/admin/create")
 def create_key(days: int = 30, note: str = "", pw: str = ""):
     if pw != "MATKHAU123":
         return {"error": "Sai mật khẩu"}
